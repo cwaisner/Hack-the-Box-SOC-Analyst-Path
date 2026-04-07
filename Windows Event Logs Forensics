@@ -1,0 +1,30 @@
+Overview
+This module covered how to analyze Windows Event Logs to detect suspicious activity, reconstruct attacker timelines, and identify indicators of compromise. 
+Windows Event Logs are one of the most valuable data sources available to a SOC analyst in a Windows-heavy environment.
+
+Key Concepts Covered
+
+Understanding the Windows Event Log structure and key log channels
+Identifying high-value Event IDs for security investigations
+Correlating logon events to detect lateral movement and privilege escalation
+Detecting persistence mechanisms through scheduled tasks and service creation logs
+Analyzing PowerShell and command-line execution logs for suspicious activity
+
+
+Important Event IDs
+Event IDDescription4624Successful logon4625Failed logon attempt4648Logon using explicit credentials4672Special privileges assigned to new 
+logon4698Scheduled task created4720User account created4732User added to privileged group7045New service installed4104PowerShell script block logging
+
+Skills Demonstrated
+
+Parsing and filtering Windows Event Logs to find security-relevant events
+Identifying failed logon patterns consistent with brute force attempts
+Tracing lateral movement through logon type analysis
+Recognizing attacker persistence techniques from log artifacts
+
+
+Key Takeaways
+Windows Event Logs tell a detailed story when read in sequence. Logon Type values are particularly useful
+Type 3 (network logon) and Type 10 (remote interactive) are common indicators of lateral movement.
+PowerShell script block logging (Event ID 4104) is one of the most valuable sources of evidence when investigating post-exploitation activity,
+as it captures the actual commands executed even when obfuscation is used.
