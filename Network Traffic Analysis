@@ -1,0 +1,30 @@
+Overview
+This module focused on analyzing network packet captures to identify malicious traffic patterns, C2 communication, data exfiltration, 
+and other suspicious activity. Wireshark was the primary tool used throughout this module.
+
+Key Concepts Covered
+
+Navigating and filtering packet captures in Wireshark
+Identifying common protocols and their expected behavior (HTTP, DNS, SMB, FTP)
+Detecting anomalous traffic patterns such as beaconing, port scanning, and unusual data transfers
+Extracting files and artifacts from packet captures
+Analyzing DNS traffic for signs of tunneling or C2 communication
+
+
+Common Wireshark Filters Used
+FilterPurposehttp.requestShow all HTTP requestsdnsIsolate DNS traffictcp.flags.syn == 1Detect SYN scansip.addr == x.x.x.xFilter by 
+IP addressframe contains "password"Search for credentials in cleartextsmb2Isolate SMB traffic
+
+Skills Demonstrated
+
+Loading and navigating PCAP files efficiently
+Applying display filters to isolate relevant traffic
+Following TCP streams to reconstruct sessions
+Identifying beaconing patterns through regular interval connections
+Extracting transferred files from captures using Wireshark's export features
+
+
+Key Takeaways
+Network analysis is often about finding what stands out — unusual destination IPs, unexpected protocols, or traffic at odd times. 
+DNS is frequently overlooked but is one of the most abused protocols for both C2 communication and data exfiltration due to how rarely it is blocked.
+Establishing a baseline of what normal traffic looks like for an environment is essential before anomalies can be reliably identified.
