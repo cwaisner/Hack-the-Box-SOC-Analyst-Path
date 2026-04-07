@@ -1,0 +1,41 @@
+Overview
+This module introduced proactive threat hunting — going beyond reactive alert triage to actively search for 
+hidden threats within an environment. Unlike traditional monitoring which waits for alerts to fire, threat hunting starts with a 
+hypothesis and searches for evidence to confirm or deny it.
+
+Key Concepts Covered
+
+Understanding the threat hunting lifecycle
+Developing hypotheses based on threat intelligence and the MITRE ATT&CK framework
+Using SIEM data to proactively search for attacker TTPs
+Identifying low-and-slow attacks that evade signature-based detection
+Documenting hunt findings and converting successful hunts into detection rules
+
+
+Threat Hunting Lifecycle
+
+Hypothesis — Form a question based on threat intel or ATT&CK techniques
+Investigation — Query SIEM/log data to look for evidence
+Discovery — Identify suspicious patterns or anomalies
+Response — Escalate confirmed findings, contain if active
+Improvement — Convert successful hunts into automated detections
+
+
+MITRE ATT&CK Techniques Investigated
+Technique IDNameT1059Command and Scripting InterpreterT1078Valid AccountsT1021Remote ServicesT1053Scheduled Task/JobT1055Process
+InjectionT1071Application Layer Protocol (C2)
+
+Skills Demonstrated
+
+Formulating threat hunting hypotheses from ATT&CK techniques
+Writing SIEM queries to surface anomalous behavior
+Identifying attacker activity that bypassed automated alerting
+Translating hunt findings into reusable detection logic
+
+
+Key Takeaways
+Threat hunting requires a different mindset than alert triage. Rather than reacting to what the SIEM surfaces,
+you are actively looking for what it might be missing. The most valuable hunts often uncover attacker activity that has been 
+present for days or weeks without triggering a single alert.
+The MITRE ATT&CK framework is an invaluable reference for structuring hunts — starting with a specific technique and working
+backwards from what artifacts it would leave behind is an effective approach.
