@@ -1,3 +1,32 @@
+Overview
 This module focused on building practical skills in Security Information and Event Management (SIEM) platforms, specifically Splunk and the ELK Stack. 
 The goal was to move beyond surface-level familiarity and develop the ability to write meaningful queries, build dashboards, 
 and investigate simulated alerts in a realistic environment.
+
+Key Concepts Covered
+Splunk
+
+Writing SPL (Search Processing Language) queries to filter and correlate log data
+Building dashboards to visualize alert trends and event timelines
+Creating alerts based on threshold conditions and behavioral anomalies
+Investigating simulated security events from raw log data
+
+ELK Stack (Elasticsearch, Logstash, Kibana)
+
+Understanding log ingestion pipelines through Logstash
+Querying indexed data in Elasticsearch using KQL
+Visualizing security data in Kibana dashboards
+Correlating events across multiple log sources
+
+
+Skills Demonstrated
+
+Translating a security question into a SIEM query
+Filtering high-volume log data to isolate relevant events
+Identifying patterns indicative of malicious activity
+Documenting findings in a structured format for escalation
+
+
+Key Takeaways
+Working with SIEM platforms reinforced that effective alert investigation is less about the tool and more about asking the right questions. Starting broad and narrowing down — filtering by time window, source IP, user account, or event ID — is the core workflow regardless of which platform you are using.
+Tuning alerts to reduce false positives is equally important as writing detection rules. An alert that fires constantly loses its value quickly in a real SOC environment.
