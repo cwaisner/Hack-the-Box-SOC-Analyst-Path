@@ -1,0 +1,69 @@
+Incident Triage Checklist
+A general-purpose checklist developed through the HTB SOC Analyst Path for triaging security alerts. Intended as a repeatable workflow for investigating common alert types.
+
+Initial Triage
+
+ What is the alert type and severity?
+ When did the event occur? Is it ongoing?
+ What asset is involved (hostname, IP, user account)?
+ Is the asset critical to business operations?
+ Has this alert fired before? Is there a known false positive pattern?
+
+
+Context Gathering
+
+ Pull all events related to the affected asset in the surrounding time window
+ Check the user account involved — is it a service account, admin, or standard user?
+ Verify the source IP reputation against threat intel feeds
+ Check for related alerts on the same asset or user within the last 24-72 hours
+ Review the asset's recent login history for anomalies
+
+
+Investigation by Alert Type
+Failed Logon / Brute Force
+
+ How many failed attempts? Over what time period?
+ Are attempts coming from a single IP or distributed sources?
+ Was there an eventual successful logon?
+ Did logon occur outside of normal business hours?
+
+Suspicious Process Execution
+
+ What is the parent process? Is the parent/child relationship expected?
+ Was the process launched from an unusual directory?
+ Does the command line contain encoded content or suspicious flags?
+ Is the binary signed? Check hash against VirusTotal
+
+Phishing / Malicious Email
+
+ Did the user click any links or open attachments?
+ Are there follow-on events (new processes, network connections) after email delivery?
+ How many users received the same email?
+ Has the sending domain been seen before?
+
+Network Anomaly / C2 Traffic
+
+ What is the destination IP/domain? Check reputation
+ Is there a regular beaconing interval?
+ What volume of data is being transferred?
+ Is the traffic encrypted? Can JA3 fingerprinting identify the tool?
+
+
+Escalation Criteria
+Escalate immediately if any of the following are present:
+
+Confirmed successful logon following brute force
+Evidence of lateral movement to additional hosts
+Active C2 communication from an internal host
+Privilege escalation or new admin account creation
+Data exfiltration indicators (large outbound transfers)
+Ransomware indicators (mass file modification, shadow copy deletion)
+
+
+Documentation
+
+ Record timeline of events with timestamps
+ Document all IOCs identified (IPs, domains, hashes, usernames)
+ Note analyst actions taken during investigation
+ Record escalation decision and rationale
+ If closed as false positive, document why for future tuning
